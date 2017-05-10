@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationMasterDetail.Views.ListarVolchers">
+
+
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="StartAndExpand" Padding="30">
+
+      <ListView x:name="volchers">
+        <ListView.ItemTemplate x:name="Lista">
+
+          <DataTemplate>
+
+            <ImageCell text="{Binding Lista.login}"
+                       Detail="{Binding Lista.pass}"
+                       ImageSource="https://s.yimg.com/dh/ap/social/profile/profile_b48.png" > 
+              
+            </ImageCell>
+            
+          </DataTemplate>
+          
+        </ListView.ItemTemplate>
+      </ListView>
+      
+  <Button Text="Login"  Command="{Binding BuscarVolchers}"/>
+
+
+  <Label Text="" />
+  <Label Text="{Binding QuantidadeVolcher}" TextColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout>
+  </ContentPage.Content>
+  
+</ContentPage>
