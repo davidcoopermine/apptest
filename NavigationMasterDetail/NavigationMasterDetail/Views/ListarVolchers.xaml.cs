@@ -15,8 +15,7 @@ namespace NavigationMasterDetail.Views
 
             InitializeComponent();
             this.BindingContext = new ViewModels.ListarVolchersViewModel();
-
-
+           
         }
     }
 }

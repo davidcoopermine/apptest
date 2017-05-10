@@ -13,6 +13,13 @@ namespace NavigationMasterDetail.ViewModels
 {
     class ListarVolchersViewModel : NotifyBase
     {
+
+
+        public ListarVolchersViewModel()
+        {
+            this.CarregaListaVolchers();
+        }
+
         private string _quantidadevolcher;
 
         public string QuantidadeVolcher
@@ -25,7 +32,8 @@ namespace NavigationMasterDetail.ViewModels
             }
 
         }
-
+      
+       
 
         private IEnumerable _lista;
 

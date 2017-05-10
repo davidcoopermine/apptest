@@ -5,29 +5,24 @@
 
 
   <ContentPage.Content>
-    <StackLayout VerticalOptions="StartAndExpand" Padding="30">
+    <StackLayout VerticalOptions="FillAndExpand">
 
-      <ListView x:name="volchers">
-        <ListView.ItemTemplate x:name="Lista">
+      <ListView x:Name="Volchers" ItemsSource="{Binding Lista}">
+        <ListView.ItemTemplate>
 
           <DataTemplate>
 
-            <ImageCell text="{Binding Lista.login}"
-                       Detail="{Binding Lista.pass}"
-                       ImageSource="https://s.yimg.com/dh/ap/social/profile/profile_b48.png" > 
-              
+            <ImageCell Text="{Binding login}"
+                       Detail="{Binding pass}"
+                       ImageSource="https://s.yimg.com/dh/ap/social/profile/profile_b48.png" >
+
             </ImageCell>
-            
+
           </DataTemplate>
-          
+
         </ListView.ItemTemplate>
       </ListView>
-      
-  <Button Text="Login"  Command="{Binding BuscarVolchers}"/>
-
-
-  <Label Text="" />
-  <Label Text="{Binding QuantidadeVolcher}" TextColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+ 
     </StackLayout>
   </ContentPage.Content>
   
