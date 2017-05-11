@@ -47,7 +47,9 @@
     <Compile Include="ObjLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IMessageService.cs" />
+    <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ServiceListarVolchers.cs" />
     <Compile Include="ViewModels\CriaVolcherViewModel.cs" />
     <Compile Include="ViewModels\ListarVolchersViewModel.cs" />

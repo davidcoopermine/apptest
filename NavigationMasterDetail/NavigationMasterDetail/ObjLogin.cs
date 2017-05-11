@@ -10,6 +10,7 @@ namespace NavigationMasterDetail
     {
         public static string login { get; set; }
         public static bool logado { get; set; }
+        public static int login_id { get; set; }
     }
     class ObjVolchers
     {
@@ -20,6 +21,7 @@ namespace NavigationMasterDetail
     {
         public static string UserRandom { get; set; }
         public static string PassRandom { get; set; }
+        public static string DataExpira { get; set; }
     }
 }
 

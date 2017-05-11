@@ -16,7 +16,7 @@ namespace NavigationMasterDetail.ViewModels
         public string Senha { get; set; }
         private string _mensamge;
         private string _quantidade;
- 
+        private int _loginid;
 
 
 
@@ -38,9 +38,18 @@ namespace NavigationMasterDetail.ViewModels
 
         }
 
-       
 
 
+        public int LoginID
+        {
+            get { return _loginid; }
+            set
+            {
+                _loginid = value;
+                Notificar();
+            }
+
+        }
 
 
         public Command Logar
@@ -65,6 +74,7 @@ namespace NavigationMasterDetail.ViewModels
 
             try
             {
+
                 var client = new HttpClient();
 
                 client.DefaultRequestHeaders.Add("X-Dreamfactory-API-Key", "cab805ee70892e586048ebf9fa6fa738c1cc101f089c85412cc7a59c618306da");
@@ -85,9 +95,10 @@ namespace NavigationMasterDetail.ViewModels
 
                     if (_quantidade == "1")
                     {
-                        Mensagem = "lOGIN AUTORIZADO";
+                        Mensagem = "Autorizado" ;
+                        ObjLogin.login_id = data.resource[0].id;
                         ObjLogin.logado = true;
-
+                        
                     }
                     else
                     {

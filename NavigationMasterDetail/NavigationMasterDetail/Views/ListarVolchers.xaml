@@ -36,8 +36,8 @@
                   <Label Text="{Binding login}" TextColor="Black" FontSize="24"/>
                   <StackLayout HorizontalOptions="StartAndExpand">
                     
-                  <Label Text="{Binding criado, StringFormat = 'Criado: {0:dd/mm/yyyy}'}" TextColor="Gray" />
-                  <Label Text="{Binding expira, StringFormat = 'Expira: {0:dd/mm/yyyy}'}" TextColor="Gray"/>
+                  <Label Text="{Binding criado, StringFormat = 'Criado: {0:MM/dd/yyyy}'}" TextColor="Gray" />
+                  <Label Text="{Binding expira, StringFormat = 'Expira: {0:MM/dd/yyyy}'}" TextColor="Gray"/>
                     
                 </StackLayout>
                 </StackLayout>

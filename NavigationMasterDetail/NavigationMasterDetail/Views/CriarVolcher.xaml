@@ -18,8 +18,9 @@
       <Label Text="Senha"  HorizontalOptions="Center" VerticalOptions="Center"/>
       <Label Text="{Binding Pass}" FontSize="36" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
       <Label Text="Selecione o tempo para expirar" HorizontalOptions="Center" VerticalOptions="Center"/>
-      <DatePicker>
-        x:Name="pickerNotificationDate"
+      <DatePicker
+        DateSelected="DatePicker_OnDateSelected"
+        x:Name="dataexpiracao"
         Date="{Binding PropertyMinimumDate}"
         MinimumDate ="{Binding PropertyMinimumDate}"
         MaximumDate = "{Binding PropertyMaximumDate}" HorizontalOptions="Center" VerticalOptions="Center">

@@ -22,10 +22,13 @@ namespace NavigationMasterDetail.ViewModels
 
         public NotifyBase()
         {
+
             this.MessageService = DependencyService.Get<IMessageService>();
-           
+            this.NavigationService = DependencyService.Get<INavigationService>();
+
         }
         public int FormPadding { get { return 30; } }
         public Task Init { get; set; }
+        public INavigationService NavigationService { get; private set; }
     }
 }
