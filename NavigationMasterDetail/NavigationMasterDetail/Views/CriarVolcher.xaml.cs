@@ -12,7 +12,12 @@ namespace NavigationMasterDetail.Views
     {
         public CriarVolcher()
         {
+
+
             InitializeComponent();
+            this.BindingContext = new ViewModels.CriaVolcherViewModel();
+
+
         }
     }
 }

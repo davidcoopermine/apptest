@@ -15,5 +15,11 @@ namespace NavigationMasterDetail
     {
         public static int Quantidade { get; set; }
     }
+
+    class ObjRamdomPass
+    {
+        public static string UserRandom { get; set; }
+        public static string PassRandom { get; set; }
+    }
 }
 

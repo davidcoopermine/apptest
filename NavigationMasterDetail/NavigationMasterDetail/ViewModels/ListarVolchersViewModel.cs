@@ -91,6 +91,7 @@ namespace NavigationMasterDetail.ViewModels
 
                 var resp = await client.GetAsync("api/v2/novacloud/_table/N_volchers");
 
+                
                 if (resp.IsSuccessStatusCode)
                 {
 
@@ -112,9 +113,8 @@ namespace NavigationMasterDetail.ViewModels
                 }
                 else
                 {
-
-                    QuantidadeVolcher = "erro na requisicao";
-
+                   
+               
                 };
 
 
@@ -122,9 +122,8 @@ namespace NavigationMasterDetail.ViewModels
             catch (Exception ex)
             {
 
-                QuantidadeVolcher = ex.ToString();
-
-
+               await this.MessageService.DisplayMessageAsync(ex.ToString());
+             
             }
 
 

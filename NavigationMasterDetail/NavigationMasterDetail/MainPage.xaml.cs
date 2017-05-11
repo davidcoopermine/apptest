@@ -1,5 +1,7 @@
 ﻿using NavigationMasterDetail.MenuItems;
 using NavigationMasterDetail.Views;
+using NavigationMasterDetail.Services;
+using NavigationMasterDetail.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ using Xamarin.Forms;
 
 namespace NavigationMasterDetail {
 
-    public partial class MainPage : MasterDetailPage {
+    public partial class MainPage : MasterDetailPage   {
 
         public List<MasterPageItem> menuList { get; set; }
 
@@ -55,12 +57,7 @@ namespace NavigationMasterDetail {
 
             ObjLogin.logado = true;
 
-         //   await DisplayAlert("Ops", page.Name.ToString(), "OK");
-
-
-           // Detail = new NavigationPage((Page)Activator.CreateInstance(page));
-           // IsPresented = false;
-
+      
             if (page.Name.ToString() == "Login")
             {
 
@@ -74,7 +71,9 @@ namespace NavigationMasterDetail {
 
             if (ObjLogin.logado == false)
             {
-                await DisplayAlert("Ops", "Você precisa estar logado!", "OK");
+
+              
+                    await DisplayAlert("Ops", "Você precisa estar logado!", "OK");
                     IsPresented = false;
                 }
             else 

@@ -5,25 +5,59 @@
 
 
   <ContentPage.Content>
-    <StackLayout VerticalOptions="FillAndExpand">
+    
+ <StackLayout VerticalOptions="FillAndExpand">
 
-      <ListView x:Name="Volchers" ItemsSource="{Binding Lista}">
+   
+      
+      <ListView x:Name="Volchers" ItemsSource="{Binding Lista}" HasUnevenRows="true">
+
+      
+        
         <ListView.ItemTemplate>
 
           <DataTemplate>
 
-            <ImageCell Text="{Binding login}"
-                       Detail="{Binding pass}"
-                       ImageSource="https://s.yimg.com/dh/ap/social/profile/profile_b48.png" >
+            <ViewCell>
+              <ViewCell.ContextActions>
+                <MenuItem Clicked="OnMore" CommandParameter="{Binding .}"
+                   Text="Imprimir" />
+                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                   Text="Cancelar" IsDestructive="True" />
+              </ViewCell.ContextActions>
 
-            </ImageCell>
+   
+        
+          <StackLayout Orientation="Horizontal">
 
+                <Image Source="loginico.png" />
+
+                <StackLayout Padding="10" HorizontalOptions="StartAndExpand">
+                  <Label Text="{Binding login}" TextColor="Black" FontSize="24"/>
+                  <StackLayout HorizontalOptions="StartAndExpand">
+                    
+                  <Label Text="{Binding criado, StringFormat = 'Criado: {0:dd/mm/yyyy}'}" TextColor="Gray" />
+                  <Label Text="{Binding expira, StringFormat = 'Expira: {0:dd/mm/yyyy}'}" TextColor="Gray"/>
+                    
+                </StackLayout>
+                </StackLayout>
+
+              </StackLayout>
+                   
+            
+         
+
+            </ViewCell>
+      
+         
           </DataTemplate>
 
         </ListView.ItemTemplate>
       </ListView>
  
     </StackLayout>
+            
+    
   </ContentPage.Content>
   
 </ContentPage>

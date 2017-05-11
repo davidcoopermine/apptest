@@ -2,5 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NavigationMasterDetail.Views.CriarVolcher">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="StartAndExpand" Padding="20">
+
+      <Image Source="wifi.png"
+    HeightRequest="180"
+    HorizontalOptions="CenterAndExpand"
+    Aspect="AspectFill"
+    WidthRequest="180"
+    Grid.RowSpan="2"
+    />
+
+      <Label Text="Usuario" HorizontalOptions="Center" VerticalOptions="Center" />
+      <Label Text="{Binding User}" FontSize="36" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+      <Label Text="Senha"  HorizontalOptions="Center" VerticalOptions="Center"/>
+      <Label Text="{Binding Pass}" FontSize="36" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+      <Label Text="Selecione o tempo para expirar" HorizontalOptions="Center" VerticalOptions="Center"/>
+      <DatePicker>
+        x:Name="pickerNotificationDate"
+        Date="{Binding PropertyMinimumDate}"
+        MinimumDate ="{Binding PropertyMinimumDate}"
+        MaximumDate = "{Binding PropertyMaximumDate}" HorizontalOptions="Center" VerticalOptions="Center">
+      </DatePicker>
+      <Button Text="GERAR E IMPRIMIR"  Command="{Binding CadastraVolcher}"/>
+
+
+      <Label Text="" />
+      <Label Text="{Binding User}" TextColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout>
+    
+    
+  </ContentPage.Content>
+  
 </ContentPage>
