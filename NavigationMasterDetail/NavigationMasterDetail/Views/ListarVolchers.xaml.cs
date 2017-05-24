@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 using Xamarin.Forms;
 
 namespace NavigationMasterDetail.Views
@@ -30,5 +31,13 @@ namespace NavigationMasterDetail.Views
             var mi = ((MenuItem)sender);
             DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
         }
+
+      // public void OnTogged(object sender, Xamarin.Forms.ToggledEventArgs e)
+       // {
+            //      
+
+           
+
+      //  }
     }
 }

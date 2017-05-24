@@ -16,6 +16,7 @@ namespace NavigationMasterDetail.Models
             public object criado { get; set; }
             public int owner { get; set; }
             public string expira { get; set; }
+            public bool pago { get; set; }
         }
 
         public class RootObject

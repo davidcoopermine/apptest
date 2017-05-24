@@ -24,7 +24,7 @@ namespace NavigationMasterDetail {
             DependencyService.Register<Services.INavigationService, Services.NavigationService>();
 
 
-            MainPage = new NavigationMasterDetail.MainPage();
+            MainPage = new NavigationMasterDetail.Views.Login();
 
             
 

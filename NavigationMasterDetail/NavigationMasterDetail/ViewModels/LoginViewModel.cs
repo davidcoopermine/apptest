@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using NavigationMasterDetail.Views;
 
 namespace NavigationMasterDetail.ViewModels
 {
@@ -65,6 +66,8 @@ namespace NavigationMasterDetail.ViewModels
             }
         }
 
+
+
        
 
 
@@ -81,7 +84,7 @@ namespace NavigationMasterDetail.ViewModels
 
                 client.BaseAddress = new Uri("http://138.121.164.9");
 
-                var resp = await client.GetAsync("api/v2/novacloud/_table/admusers?filter=(radius_pass%3D" + Senha + ")%20and%20(user%3D" + Usuario + ")&limit=1");
+                var resp = await client.GetAsync("api/v2/novacloud/_table/N_volchers_Adm?filter=(radius_pass%3D" + Senha + ")%20and%20(user%3D" + Usuario + ")&limit=1");
 
                 if (resp.IsSuccessStatusCode)
                 {
@@ -98,7 +101,7 @@ namespace NavigationMasterDetail.ViewModels
                         Mensagem = "Autorizado" ;
                         ObjLogin.login_id = data.resource[0].id;
                         ObjLogin.logado = true;
-                        
+                        await Task.Run(() => Device.BeginInvokeOnMainThread(() => App.Current.MainPage = new MainPage()));
                     }
                     else
                     {

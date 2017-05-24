@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using NavigationMasterDetail.Services;
 using NavigationMasterDetail;
+using NavigationMasterDetail.Views;
 
 namespace NavigationMasterDetail.ViewModels
 {
@@ -18,8 +19,6 @@ namespace NavigationMasterDetail.ViewModels
     {
 
         private string _user;
-        private string data_expira;
-
 
 
         public string User
@@ -121,8 +120,8 @@ namespace NavigationMasterDetail.ViewModels
                     var respStr = await resp.Content.ReadAsStringAsync();
 
                     //   vai pra tela te confirmacao
-              //      await this.MessageService.DisplayMessageAsync("cadastrado");
-                    await this.NavigationService.NavigateToLogon();
+                    await this.MessageService.DisplayMessageAsync("Volcher gerado com sucesso");
+                    await Task.Run(() => Device.BeginInvokeOnMainThread(() => App.Current.MainPage = new ImprimirVolcher()));
 
 
                 } else

@@ -22,7 +22,7 @@
       <Entry Text="{Binding Senha}" IsPassword="true" x:Name="passwordEntry" />
 
       <Button Text="Login"  Command="{Binding Logar}"/>
-
+      
 
       <Label Text="" />
       <Label Text="{Binding Mensagem}" TextColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>

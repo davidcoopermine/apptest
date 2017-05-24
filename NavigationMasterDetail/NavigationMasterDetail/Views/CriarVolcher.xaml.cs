@@ -27,7 +27,7 @@ namespace NavigationMasterDetail.Views
         {
 
             // seta data
-            ObjRamdomPass.DataExpira =  e.NewDate.ToString("yy-MM-dd");
+            ObjRamdomPass.DataExpira =  e.NewDate.ToString("yy-MM-dd HH:mm:ss");
                         
 
         }

@@ -32,8 +32,33 @@ namespace NavigationMasterDetail.ViewModels
             }
 
         }
-      
+
+        private string _statuspagamento;
+
+        public string StatusPagamento
+        {
+            get { return _statuspagamento; }
+            set
+            {
+                _statuspagamento = value;
+                Notificar();
+            }
+
+        }
+
+        public bool _ativo;
+
+        public bool Ativo
+        {
+            get { return _ativo; }
+            set
+            {
+                _ativo = value;
+                Notificar();
+            }
        
+        }
+        
 
         private IEnumerable _lista;
 
@@ -75,8 +100,7 @@ namespace NavigationMasterDetail.ViewModels
         }
 
 
-
-
+     
         private async void CarregaListaVolchers()
         {
 
@@ -103,8 +127,7 @@ namespace NavigationMasterDetail.ViewModels
 
 
                     Lista = data.resource as IEnumerable;
-             
-                    
+                                
 
                     QuantidadeVolcher = data.resource.Count.ToString();
 
