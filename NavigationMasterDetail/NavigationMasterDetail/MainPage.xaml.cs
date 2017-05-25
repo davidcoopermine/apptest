@@ -25,12 +25,11 @@ namespace NavigationMasterDetail {
             // Here you can define title for item, 
             // icon on the left side, and page that you want to open after selection
             var page1 = new MasterPageItem() { Title = "Criar Volcher", Icon = "itemIcon1.png", TargetType = typeof(CriarVolcher) };
-            var page2 = new MasterPageItem() { Title = "Listar Volcher", Icon = "itemIcon2.png", TargetType = typeof(ListarVolchers) };
-            var page3 = new MasterPageItem() { Title = "Volchers Novos", Icon = "itemIcon3.png", TargetType = typeof(VolchersNovos) };
-            var page4 = new MasterPageItem() { Title = "Volchers Antigos", Icon = "itemIcon4.png", TargetType = typeof(VolchersAntigos) };
-            var page5 = new MasterPageItem() { Title = "Login", Icon = "itemIcon5.png", TargetType = typeof(Login) };
-            var page6 = new MasterPageItem() { Title = "Sair", Icon = "itemIcon6.png", TargetType = typeof(Sair) };
-           
+            var page2 = new MasterPageItem() { Title = "Volchers - Todos", Icon = "itemIcon2.png", TargetType = typeof(ListarVolchers) };
+            var page3 = new MasterPageItem() { Title = "Meus Volchers - Em Aberto", Icon = "itemIcon3.png", TargetType = typeof(ListarVolchersCredenciadosAbertos) };
+            var page4 = new MasterPageItem() { Title = "Meus Volchers - Todos", Icon = "itemIcon4.png", TargetType = typeof(ListarVolchersCredenciadosFechados) };
+            var page5 = new MasterPageItem() { Title = "Credenciados", Icon = "itemIcon1.png", TargetType = typeof(ListarAdmins) };
+       
 
             // Adding menu items to menuList
             menuList.Add(page1);
@@ -38,14 +37,15 @@ namespace NavigationMasterDetail {
             menuList.Add(page3);
             menuList.Add(page4);
             menuList.Add(page5);
-            menuList.Add(page6);
-          
+
+            if (ObjLogin.adm == false) { menuList.Remove(page2); menuList.Remove(page5); }
+            
 
             // Setting our list to be ItemSource for ListView in MainPage.xaml
             navigationDrawerList.ItemsSource = menuList;
 
             // Initial navigation, this can be used for our home page
-            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(TestPage1)));
+            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(TestPage3)));
 
             IsPresented = true;
 
@@ -60,32 +60,24 @@ namespace NavigationMasterDetail {
 
             ObjLogin.logado = true;
 
-      
+
             if (page.Name.ToString() == "Login")
             {
 
-            //   // abrir pagina login
+                //   // abrir pagina login
                 Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(Login)));
-              IsPresented = false;
+                IsPresented = false;
             }
             else
             {
 
+             
 
-            if (ObjLogin.logado == false)
-            {
-
-              
-                    await DisplayAlert("Ops", "Você precisa estar logado!", "OK");
-                    IsPresented = false;
-                }
-            else 
-            {
                 Detail = new NavigationPage((Page)Activator.CreateInstance(page));
-            IsPresented = false;
-               }
+                IsPresented = false;
 
-              }
+
+            }
 
         }
     }

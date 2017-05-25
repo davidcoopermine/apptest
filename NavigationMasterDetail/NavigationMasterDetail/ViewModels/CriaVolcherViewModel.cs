@@ -88,7 +88,27 @@ namespace NavigationMasterDetail.ViewModels
             }
         }
 
-        
+
+        public Command Voltar
+        {
+            get
+            {
+                return new Command(() =>
+                {
+
+                    VoltarMenu();
+
+                });
+            }
+        }
+
+
+        private async void VoltarMenu()
+        {
+            await Task.Run(() => Device.BeginInvokeOnMainThread(() => App.Current.MainPage = new MainPage()));
+        }
+
+
 
         private async void AddVolchers()
         {
@@ -105,9 +125,13 @@ namespace NavigationMasterDetail.ViewModels
                 DateTime dt = DateTime.Now;
                 string s = dt.ToString("yyyy-MM-dd HH:mm:ss");
 
+
+
              //   await this.MessageService.DisplayMessageAsync(s);
 
-                var content = new StringContent("{\"resource\":[{\"login\":\""+ ObjRamdomPass.UserRandom + "\",\"pass\":\"" + ObjRamdomPass.PassRandom + "\",\"owner\":\"" + ObjLogin.login_id + "\",\"criado\":\"" + s + "\",\"expira\":\"" + ObjRamdomPass.DataExpira + "\"}]}", Encoding.UTF8, "application/json");
+                var content = new StringContent("{\"resource\":[{\"login\":\""+ ObjRamdomPass.UserRandom + "\",\"pass\":\"" + ObjRamdomPass.PassRandom + "\",\"owner\":\"" + ObjLogin.login + "\",\"criado\":\"" + s + "\",\"expira\":\"" + ObjRamdomPass.DataExpira + "\"}]}", Encoding.UTF8, "application/json");
+
+                
 
                 var resp = await client.PostAsync("api/v2/novacloud/_table/N_volchers", content);
 

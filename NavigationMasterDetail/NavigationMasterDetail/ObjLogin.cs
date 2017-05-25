@@ -10,11 +10,16 @@ namespace NavigationMasterDetail
     {
         public static string login { get; set; }
         public static bool logado { get; set; }
+        public static bool adm { get; set; }
         public static int login_id { get; set; }
+
+
     }
     class ObjVolchers
     {
         public static int Quantidade { get; set; }
+        public static int Dias { get; set; }
+        public static string valor { get; set; }
     }
 
     class ObjRamdomPass

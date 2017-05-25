@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using NavigationMasterDetail.Services;
 using NavigationMasterDetail.Views;
+
 // [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace NavigationMasterDetail {
@@ -15,6 +16,7 @@ namespace NavigationMasterDetail {
 
 
         public App() {
+
             InitializeComponent();
 
          

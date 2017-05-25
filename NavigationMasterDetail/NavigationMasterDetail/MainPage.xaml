@@ -50,6 +50,7 @@
                          VerticalOptions="Center"
                          TextColor="Black"/>
                 </StackLayout>
+           
               </ViewCell>
             </DataTemplate>
           </ListView.ItemTemplate>

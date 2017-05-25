@@ -37,12 +37,14 @@
                   <StackLayout HorizontalOptions="StartAndExpand">
                   <Label Text="{Binding pass}" TextColor="Gray" />
                   <Label Text="{Binding criado, StringFormat = 'Criado: {0:MM/dd/yyyy}'}" TextColor="Gray" />
+                  <Label Text="{Binding owner, StringFormat = 'Criado por: {0}'}" TextColor="Gray" />
                   <Label Text="{Binding expira, StringFormat = 'Expira: {0:MM/dd/yyyy}'}" TextColor="Gray"/>
+                  <Label Text="{Binding dias, StringFormat = 'R$ {0:C0}'}" TextColor="Gray"/>
                           </StackLayout>
                
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">  
-                                         <Label Text="Baixa" TextColor="Gray" FontSize="11" />
-                         <Switch HorizontalOptions="Start" IsToggled="{Binding pago}"/>
+                                    <Label Text="Baixa" TextColor="Gray" FontSize="11" />
+                                    <Switch HorizontalOptions="Start" IsToggled="{Binding pago}"/>
                                          
            
                 </StackLayout>

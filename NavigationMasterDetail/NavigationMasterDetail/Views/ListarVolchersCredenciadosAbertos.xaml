@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationMasterDetail.Views.ListarVolchersCredenciadosAbertos">
+  <ContentPage.Content>
+
+    <StackLayout VerticalOptions="FillAndExpand">
+
+
+
+      <ListView x:Name="Volchers" ItemsSource="{Binding Lista}" HasUnevenRows="true">
+
+
+
+        <ListView.ItemTemplate>
+
+          <DataTemplate>
+
+            <ViewCell>
+    
+
+
+              <StackLayout Orientation="Horizontal">
+
+                <Image Source="loginico.png" />
+
+                <StackLayout Padding="10" HorizontalOptions="StartAndExpand">
+                  <Label Text="{Binding login}" TextColor="Black" FontSize="24"/>
+
+                  <StackLayout HorizontalOptions="StartAndExpand">
+                    <Label Text="{Binding pass}" TextColor="Gray" />
+                    <Label Text="{Binding criado, StringFormat = 'Criado: {0:MM/dd/yyyy}'}" TextColor="Gray" />
+                    <Label Text="{Binding owner, StringFormat = 'Criado por: {0}'}" TextColor="Gray" />
+                    <Label Text="{Binding expira, StringFormat = 'Expira: {0:MM/dd/yyyy}'}" TextColor="Gray"/>
+                    <Label Text="{Binding dias, StringFormat = 'R$ {0:C0}'}" TextColor="Gray"/>
+                  </StackLayout>
+
+           
+                </StackLayout>
+
+              </StackLayout>
+
+
+
+
+            </ViewCell>
+
+
+          </DataTemplate>
+
+        </ListView.ItemTemplate>
+      </ListView>
+
+    </StackLayout>
+
+
+  </ContentPage.Content>
+</ContentPage>

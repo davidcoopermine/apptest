@@ -83,8 +83,9 @@ namespace NavigationMasterDetail.ViewModels
                 client.DefaultRequestHeaders.Add("X-Dreamfactory-API-Key", "cab805ee70892e586048ebf9fa6fa738c1cc101f089c85412cc7a59c618306da");
 
                 client.BaseAddress = new Uri("http://138.121.164.9");
+                
 
-                var resp = await client.GetAsync("api/v2/novacloud/_table/N_volchers_Adm?filter=(radius_pass%3D" + Senha + ")%20and%20(user%3D" + Usuario + ")&limit=1");
+                var resp = await client.GetAsync("api/v2/novacloud/_table/N_volchers_Adm?filter=(pass%3D" + Senha + ")%20and%20(user%3D" + Usuario + ")&limit=1");
 
                 if (resp.IsSuccessStatusCode)
                 {
@@ -101,7 +102,10 @@ namespace NavigationMasterDetail.ViewModels
                         Mensagem = "Autorizado" ;
                         ObjLogin.login_id = data.resource[0].id;
                         ObjLogin.logado = true;
+                        ObjLogin.login = data.resource[0].user;
+                        ObjLogin.adm = data.resource[0].adm;
                         await Task.Run(() => Device.BeginInvokeOnMainThread(() => App.Current.MainPage = new MainPage()));
+
                     }
                     else
                     {

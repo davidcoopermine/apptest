@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace NavigationMasterDetail.Views {
-    public partial class TestPage2 : ContentPage {
-        public TestPage2() {
+    public partial class CriaLogin : ContentPage {
+        public CriaLogin() {
             InitializeComponent();
+            this.BindingContext = new ViewModels.CriaLoginViewModel();
         }
     }
 }

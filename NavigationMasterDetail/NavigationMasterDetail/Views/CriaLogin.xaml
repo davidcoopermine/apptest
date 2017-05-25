@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationMasterDetail.Views.CriaLogin" >
+
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="StartAndExpand" Padding="30">
+
+      <Image Source="parceiro.png"
+    HeightRequest="200"
+    HorizontalOptions="CenterAndExpand"
+    Aspect="AspectFill"
+    WidthRequest="300"
+    Grid.RowSpan="3"
+    />
+
+      <Label Text="Usuario" />
+      <Entry Text="{Binding Usuario}" x:Name="usernameEntry" />
+
+      <Label Text="Senha" />
+      <Entry Text="{Binding Senha}" IsPassword="true" x:Name="passwordEntry" />
+      
+      
+      
+      <Button Text="Cadastrar Credenciado" Command="{Binding CadastraAdmin}"/>
+
+      <Button Text="Voltar" Command="{Binding Voltar}"/>
+      
+      
+      
+    </StackLayout>
+  </ContentPage.Content>
+
+  
+</ContentPage>

@@ -11,11 +11,11 @@ using Xamarin.Forms;
 
 namespace NavigationMasterDetail.ViewModels
 {
-    class ListarVolchersViewModel : NotifyBase
+    class ListarVolchersAbertosCredenciadosViewModel : NotifyBase
     {
 
 
-        public ListarVolchersViewModel()
+        public ListarVolchersAbertosCredenciadosViewModel()
         {
             this.CarregaListaVolchers();
 
@@ -143,8 +143,7 @@ namespace NavigationMasterDetail.ViewModels
 
                 client.BaseAddress = new Uri("http://138.121.164.9");
 
-                var resp = await client.GetAsync("api/v2/novacloud/_table/vw_Volchers");
-
+                var resp = await client.GetAsync("api/v2/novacloud/_table/vw_Volchers?filter=(owner%3D'"+ ObjLogin.login + "'%20)and(pago%3D'"+ "false" +"'%20)");
                 
                 if (resp.IsSuccessStatusCode)
                 {

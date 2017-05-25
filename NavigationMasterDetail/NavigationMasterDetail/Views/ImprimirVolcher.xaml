@@ -14,12 +14,13 @@
     />
 
       <Label Text="Usuario" HorizontalOptions="Center" VerticalOptions="Center" />
-      <Label Text="{Binding User}" FontSize="36" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+      <Label Text="{Binding User}" FontSize="30" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
       <Label Text="Senha"  HorizontalOptions="Center" VerticalOptions="Center"/>
-      <Label Text="{Binding Pass}" FontSize="36" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
-      <Label Text="SUA CONTA É VALIDA ATÉ" FontSize="20" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
-      <Label Text="{Binding DataExpira}" FontSize="36" HorizontalOptions="Center" VerticalOptions="Center"/>
-      <Label Text="" />
+      <Label Text="{Binding Pass}" FontSize="30" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+      <Label Text="SUA CONTA É VALIDA ATÉ" FontSize="18" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+      <Label Text="{Binding DataExpira}" FontSize="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+      <Label Text="VALOR DO TICKET" FontSize="18" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+      <Label Text="{Binding Valor, StringFormat = 'R$ {0}'}" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
       <Button Text="IMPRIMIR" Command="{Binding ImprimirVolcher}"/>
 
       <Label Text="" />

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationMasterDetail.Views.ListarAdmins">
+  
+  <ContentPage.Content>
+
+    <StackLayout VerticalOptions="FillAndExpand">
+    
+      <StackLayout VerticalOptions="FillAndExpand" >
+        
+      <Button Text="CADASTRAR NOVO CREDENCIADO"  Command="{Binding Cadastrar}" />
+        
+      </StackLayout>
+      
+      
+      <ListView x:Name="Volchers" ItemsSource="{Binding Lista}" HasUnevenRows="true">
+
+
+
+        <ListView.ItemTemplate>
+
+          <DataTemplate>
+
+            <ViewCell>
+              <ViewCell.ContextActions>
+                <MenuItem Clicked="OnMore" CommandParameter="{Binding .}"
+                   Text="Vizualizar" />
+                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                   Text="Apagar" IsDestructive="True" />
+              </ViewCell.ContextActions>
+
+
+              <StackLayout Orientation="Horizontal">
+
+                <Image Source="loginico.png" />
+
+                <StackLayout Padding="10" HorizontalOptions="StartAndExpand">
+
+                  <Label Text="{Binding owner}" TextColor="Black" FontSize="24"/>
+                  
+                  <StackLayout Orientation="Horizontal">
+                 
+                   
+                    <Label Text="{Binding total, StringFormat = 'Total: {0} '}" TextColor="Gray" FontSize="12"/>
+                    <Label Text="{Binding pagos, StringFormat = 'Pagos: {0} '}" TextColor="Gray" FontSize="12"/>
+                    <Label Text="{Binding abertos, StringFormat = 'Em Aberto: {0} '}" TextColor="Gray" FontSize="12"/>
+                                       
+                  </StackLayout>      
+                </StackLayout>
+
+              </StackLayout>
+
+
+
+
+            </ViewCell>
+
+
+          </DataTemplate>
+
+        </ListView.ItemTemplate>
+      </ListView>
+
+    </StackLayout>
+
+
+  </ContentPage.Content>
+  
+  
+  
+</ContentPage>

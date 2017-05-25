@@ -8,11 +8,12 @@ using Xamarin.Forms;
 
 namespace NavigationMasterDetail.Views
 {
-    public partial class VolchersNovos : ContentPage
+    public partial class ListarVolchersCredenciadosFechados : ContentPage
     {
-        public VolchersNovos()
+        public ListarVolchersCredenciadosFechados()
         {
             InitializeComponent();
+            this.BindingContext = new ViewModels.ListarVolchersFechadosCredenciadosViewModel();
         }
     }
 }

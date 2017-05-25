@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace NavigationMasterDetail.Models
 {
-    class Volchers
+    class OwnerAdmin
     {
         public class Resource
         {
             public int id { get; set; }
-            public string login { get; set; }
-            public string pass { get; set; }
-            public object criado { get; set; }
             public string owner { get; set; }
-            public string expira { get; set; }
-            public bool pago { get; set; }
-            public string dias { get; set; }
+            public bool adm { get; set; }
+            public string total { get; set; }
+            public string pagos { get; set; }
+            public string abertos { get; set; }
         }
 
         public class RootObject
